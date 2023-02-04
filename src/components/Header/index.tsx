@@ -1,14 +1,15 @@
 'use client';
 
-import React from 'react';
+import React, { useContext } from 'react';
 import clsx from 'clsx';
-import BrandLogo from '../../../public/cube.svg';
+import BrandLogo from '../../../public/icons/cube.svg';
 import CustomSwitch from '../Common/CustomSwitch';
 import SearchBar from './SearchBar';
 import Image from 'next/image';
+import { DisplayModeContext } from '@/contexts/DisplayModeContext';
 
 const Header = () => {
-    const [activeMode, setActiveMode] = React.useState('Day');
+    const { isDarkMode, toggleDarkMode } = useContext(DisplayModeContext);
     const modes = [
         {
             displayText: 'Day',
@@ -19,6 +20,7 @@ const Header = () => {
             element: <Image src='./icons/moon.svg' alt='moon' height={14} width={14} />
         }
     ];
+    const activeDisplayMode = isDarkMode ? 'Night' : 'Day';
     return (
         <div className={clsx([`h-[60px] flex justify-between items-center px-4`])}>
             <div className={clsx([`w-fit flex items-center gap-x-2`])}>
@@ -34,7 +36,11 @@ const Header = () => {
                 </a>
             </div>
             <div className='h-fit flex items-center gap-2'>
-                <CustomSwitch modes={modes} activeMode={activeMode} setActiveMode={setActiveMode} />
+                <CustomSwitch
+                    modes={modes}
+                    activeMode={activeDisplayMode}
+                    setActiveMode={toggleDarkMode}
+                />
                 <SearchBar />
             </div>
         </div>

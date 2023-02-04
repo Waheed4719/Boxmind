@@ -1,14 +1,16 @@
+'use client';
+
 import TrendingStories from '../components/Home/TrendingStories';
 import FavouritesAndPopular from '../components/Home/FavouritesAndPopular';
-import styles from './page.module.css';
+import styles from '../styles/home.module.css';
 import Header from '../components/Header';
 import FavouriteAuthors from '@/components/Home/FavouriteAuthors';
 
 const Home = () => {
     return (
-        <main className={styles.container}>
+        <main className=''>
             <Header />
-            <div className={styles.home}>
+            <div className={`${styles.home} max-w-[1920px] mx-auto`}>
                 <TrendingStories />
                 <div className='flex flex-col gap-4'>
                     <FavouriteAuthors />
