@@ -14,7 +14,7 @@ module.exports = {
         'trendingStories' : '1fr',
       },
       gridTemplateRows: {
-        'trendingStories': 'repeat(3, 170px) 80px'
+        'trendingStories': 'repeat(3, 200px) 1fr'
       }
     },
   },

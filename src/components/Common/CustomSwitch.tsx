@@ -12,7 +12,7 @@ type CustomSwitchProps = {
 const activeSwitchClassNames = 'bg-white text-[#909ab4] rounded-full';
 const inActiveSwitchClassNames = 'text-[#c0c6d4]';
 const commonSwitchClassNames =
-    ' font-semibold px-3 flex items-center cursor-pointer ease-in-out duration-300';
+    'font-semibold px-3 flex items-center cursor-pointer ease-in-out duration-300';
 
 const CustomSwitch = ({ modes, activeMode, setActiveMode }: CustomSwitchProps) => {
     const generateClassName = (mode?: Mode) => {

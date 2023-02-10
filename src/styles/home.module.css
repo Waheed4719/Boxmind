@@ -1,8 +1,7 @@
 .home {
     display: grid;
-    grid-template-columns: 400px minmax(calc(100% - 400px), 1fr);
+    grid-template-columns: 500px minmax(calc(100% - 500px), 1fr);
     width: 100%;
-
     /* grid-template-areas:
         'trending-stories favorites-and-popular favorites-and-popular'
         'random-posts random-posts random-posts'; */

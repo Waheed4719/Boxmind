@@ -2,10 +2,12 @@
 
 import CustomSwitch from '@/components/Common/CustomSwitch';
 import React from 'react';
-import styles from './favourites_and_popular.module.css';
+import Card from './Card';
+import { useWindowSize } from '@/hooks/useWindowSize';
 
 const FavouritesAndPopular = () => {
     const [activeMode, setActiveMode] = React.useState('Following');
+    const { width, height } = useWindowSize();
     const modes = [
         {
             displayText: 'Following',
@@ -17,8 +19,16 @@ const FavouritesAndPopular = () => {
         }
     ];
     return (
-        <div className={`${styles.favoritesAndPopular}h-[100%] px-6 py-2`}>
+        <div className='flex flex-col h-[100%] px-6 pt-2 gap-4'>
             <CustomSwitch modes={modes} activeMode={activeMode} setActiveMode={setActiveMode} />
+            <div className='grid sm:grid-cols-2 md:grid-cols-2 2xl:grid-cols-3 gap-4 flex-1'>
+                {Array(width && width > 1540 ? 3 : 2)
+                    .fill(0)
+                    .map((post, index) => (
+                        <Card key={index} post={post} />
+                    ))}
+            </div>
+            <div className='border border-b-1 h-[1px] w-full mx-auto flex mt-auto' />
         </div>
     );
 };

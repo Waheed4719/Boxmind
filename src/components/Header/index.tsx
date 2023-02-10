@@ -7,6 +7,9 @@ import CustomSwitch from '../Common/CustomSwitch';
 import SearchBar from './SearchBar';
 import Image from 'next/image';
 import { DisplayModeContext } from '@/contexts/DisplayModeContext';
+import Link from 'next/link';
+import Avatar from '../Common/Avatar';
+import { ChevronDownIcon } from '@heroicons/react/24/solid';
 
 const Header = () => {
     const { isDarkMode, toggleDarkMode } = useContext(DisplayModeContext);
@@ -31,17 +34,21 @@ const Header = () => {
                 >
                     <BrandLogo src='/cube.svg' height={20} width={20} alt='brand' />
                 </div>
-                <a href='/' className='font-bold '>
+                <Link href='/' className='font-bold '>
                     Boxmind.
-                </a>
+                </Link>
             </div>
             <div className='h-fit flex items-center gap-2'>
+                <SearchBar />
+                <div className='w-[2px] h-[25px] bg-[#f4f5f4] mx-3' />
                 <CustomSwitch
                     modes={modes}
                     activeMode={activeDisplayMode}
                     setActiveMode={toggleDarkMode}
                 />
-                <SearchBar />
+                <div className='w-[2px] h-[25px] bg-[#f4f5f4] mx-3' />
+                <Avatar image='/icons/person1.png' height={35} width={35} />
+                <ChevronDownIcon className='h-4 w-4 text-gray-500' />
             </div>
         </div>
     );
