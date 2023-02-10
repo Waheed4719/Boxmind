@@ -12,9 +12,9 @@ const Card = ({ title, post }: CardProps) => {
         <div className='flex flex-col w-[500px] max-w-full'>
             <Image
                 src='/images/komodo.jpg'
-                width={500}
+                width={800}
                 height={240}
-                style={{ objectFit: 'cover' }}
+                style={{ objectFit: 'cover', maxHeight: 280 }}
                 className='mb-2'
                 alt='featured'
             />

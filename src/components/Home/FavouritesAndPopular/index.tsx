@@ -21,8 +21,8 @@ const FavouritesAndPopular = () => {
     return (
         <div className='flex flex-col h-[100%] px-6 pt-2 gap-4'>
             <CustomSwitch modes={modes} activeMode={activeMode} setActiveMode={setActiveMode} />
-            <div className='grid sm:grid-cols-2 md:grid-cols-2 2xl:grid-cols-3 gap-4 flex-1'>
-                {Array(width && width > 1540 ? 3 : 2)
+            <div className='grid sm:grid-cols-2 md:grid-cols-2 2xl:grid-cols-2 gap-4 flex-1'>
+                {Array(width && width > 1540 ? 2 : 2)
                     .fill(0)
                     .map((post, index) => (
                         <Card key={index} post={post} />
