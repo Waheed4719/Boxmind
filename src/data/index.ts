@@ -1,33 +1,47 @@
+import { faker } from '@faker-js/faker';
+
 export const trendingStories = [
     {
         category: 'Marketing',
-        title: 'How to use social media to grow your business',
-        author: 'Liam Neeson'
+        title: 'Our Team Suffered from Too Many Ideas. How Did We Beat The Chaos?',
+        author: 'Liam Neeson',
+        avatar: faker.image.avatar(),
+        featuredImage: faker.image.abstract(380, 240, true)
     },
     {
         category: 'Gadget',
-        title: 'Liquid Retina Display XDR',
-        author: 'Percy Muidoon'
+        title: 'Get The Right Dirt Bike For Your Kid To Win The Go Kart Race',
+        author: 'Percy Muidoon',
+        avatar: faker.image.avatar(),
+        featuredImage: faker.image.abstract(380, 240, true)
     },
     {
         category: 'Film',
-        title: 'Film Review - West Side Story',
-        author: 'Robin Wright'
+        title: 'What We Should Have Learned In School But Never Did',
+        author: 'Robin Wright',
+        avatar: faker.image.avatar(),
+        featuredImage: faker.image.abstract(380, 240, true)
     },
     {
         category: 'Science',
-        title: 'How to use social media to grow your business',
-        author: 'Rowena MacLead'
+        title: '7 Valuable Lessons Learned From Tennis Legend - Roger Federer',
+        author: 'Rowena MacLead',
+        avatar: faker.image.avatar(),
+        featuredImage: faker.image.abstract(380, 240, true)
     },
     {
         category: 'Gadget',
-        title: 'The Best 60 Percent Gaming Keyboard',
-        author: 'Mary Winchester'
+        title: 'Get The Right Dirt Bike For Your Kid To Win The Go Kart Race',
+        author: 'Mary Winchester',
+        avatar: faker.image.avatar(),
+        featuredImage: faker.image.abstract(380, 240, true)
     },
     {
         category: 'Health',
-        title: '25 Health Benefits Of Lemon',
-        author: 'Michael Scofield'
+        title: 'The 15 Foods You Should Be Eating Every Single Day And Why',
+        author: 'Michael Scofield',
+        avatar: faker.image.avatar(),
+        featuredImage: faker.image.abstract(380, 240, true)
     },
 
 ]

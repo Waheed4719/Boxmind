@@ -25,7 +25,11 @@ const Header = () => {
     ];
     const activeDisplayMode = isDarkMode ? 'Night' : 'Day';
     return (
-        <div className={clsx([`h-[60px] flex justify-between items-center px-4`])}>
+        <div
+            className={clsx([
+                `h-[60px] flex justify-between items-center px-4 fixed top-0 bg-white w-full z-10`
+            ])}
+        >
             <div className={clsx([`w-fit flex items-center gap-x-2`])}>
                 <div
                     className={clsx([

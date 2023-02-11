@@ -1,0 +1,1 @@
+export type Post = { category: string; title: string; author: string; avatar: string, description?: string, featuredImage: string };

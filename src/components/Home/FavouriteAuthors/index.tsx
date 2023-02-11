@@ -1,4 +1,5 @@
 import React from 'react';
+import { faker } from '@faker-js/faker';
 import Avatar from '../../Common/Avatar';
 import ArrowLeftIcon from '../../../../public/icons/arrow-left.svg';
 import ArrowRightIcon from '../../../../public/icons/arrow-right.svg';
@@ -13,7 +14,7 @@ const FavouriteAuthors = () => {
                         {Array(20)
                             .fill(0)
                             .map((_, index) => (
-                                <Avatar shadow key={index} image='/icons/person1.png' badge={2} />
+                                <Avatar shadow key={index} image={faker.image.avatar()} badge={2} />
                             ))}
                     </div>
                     <div className='w-[35px] h-[35px] flex bg-white shadow-md absolute rounded-full top-[50%] translate-y-[-50%] left-[-10px] cursor-pointer items-center justify-center'>

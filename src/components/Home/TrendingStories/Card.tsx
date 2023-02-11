@@ -1,26 +1,31 @@
 import styles from './trending_stories.module.css';
 import clsx from 'clsx';
 import Avatar from '@/components/Common/Avatar';
+import { Post } from '@/types';
 
 type CardProps = {
-    data: { category: string; title: string; author: string };
+    post: Post;
+    index: number;
 };
+const array = [0, 3, 4];
 
-const Card = ({ data }: CardProps) => {
+const Card = ({ post, index }: CardProps) => {
     return (
         <div
             className={clsx([
-                styles.gradient,
+                !array.includes(index) ? styles.gradient : 'bg-[#5e80d8]',
                 styles.trendingStoriesCard,
                 'p-8 flex flex-col justify-start gap-2 sh'
             ])}
         >
-            <h5 className='text-gray-300 text-sm font-medium uppercase'>{data.category}</h5>
-            <h3 className='text-white text-md font-semibold'>{data.title.substring(0, 50)}</h3>
+            <h5 className='text-gray-300 text-sm font-medium uppercase'>{post.category}</h5>
+            <h3 className='text-white text-md font-semibold cursor-pointer'>
+                {post.title.substring(0, 50)}...
+            </h3>
 
             <div className='items-center flex gap-2 mt-2'>
-                <Avatar shadow height={35} width={35} image='/icons/person1.png' />
-                <span className='text-white font-medium text-sm'>{data.author}</span>
+                <Avatar shadow height={35} width={35} image={post.avatar} />
+                <span className='text-white font-medium text-sm'>{post.author}</span>
             </div>
         </div>
     );

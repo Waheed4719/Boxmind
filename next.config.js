@@ -9,6 +9,9 @@ const nextConfig = {
 
     return config;
   },
+  images: {
+    domains: ['images.unsplash.com', 'loremflickr.com', 'cloudflare-ipfs.com'],
+},
 }
 
 module.exports = nextConfig
