@@ -14,7 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
         <main className={`${styles.container} pt-[60px]`}>
             <Header />
             <Sidebar />
-            {children}
+            <div className='max-w-[1920px] mx-auto'>{children}</div>
         </main>
     );
 };
