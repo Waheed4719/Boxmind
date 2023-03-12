@@ -4,8 +4,8 @@ import { trendingStories } from '@/data';
 
 const TrendingStories = () => {
     return (
-        <div className='grid grid-cols-trendingStories  grid-rows-trendingStories'>
-            <div className='grid grid-cols-2'>
+        <div className='grid grid-cols-trendingStories  md:grid-rows-trendingStories'>
+            <div className='grid grid-cols-1 md:grid-cols-2'>
                 {trendingStories.map((post, index) => (
                     <Card index={index} key={post.title} post={post} />
                 ))}
