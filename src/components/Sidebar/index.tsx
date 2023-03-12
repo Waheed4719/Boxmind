@@ -8,7 +8,7 @@ import {
 
 const Sidebar = () => {
     return (
-        <div className='flex flex-col left-0 fixed bottom-0 top-[60px] bg-[#f5f7f9] w-[70px] border boder-l-2'>
+        <div className='flex flex-col left-0 fixed bottom-0 top-[60px] bg-[#f5f7f9] dark:bg-[#18181e] w-[70px] '>
             <div className='flex gap-2 flex-col items-center w-full flex-1'>
                 <div className='h-[50px] w-full items-center flex justify-center'>
                     <BookmarkIcon className='h-6 w-6 text-[#bfc4d2]' />

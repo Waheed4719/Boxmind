@@ -1,5 +1,6 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
+import { ThemeProvider } from 'next-themes';
 import { DisplayModeProvider } from '@/contexts/DisplayModeContext';
 import type { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
@@ -16,9 +17,9 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
     const getLayout = Component.getLayout ?? ((page) => page);
 
     return getLayout(
-        <DisplayModeProvider>
+        <ThemeProvider enableSystem attribute='class'>
             <Component {...pageProps} />
-        </DisplayModeProvider>
+        </ThemeProvider>
     );
 };
 export default App;

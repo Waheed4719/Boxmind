@@ -1,6 +1,7 @@
 'use client';
 
 import { createContext, useCallback, useState, useEffect } from 'react';
+import { useTheme } from 'next-themes';
 
 type DisplayModeContextState = {
     isDarkMode: boolean;
@@ -16,24 +17,31 @@ export const DisplayModeContext = createContext<DisplayModeContextState>({
 });
 
 let htmlDocument: HTMLHtmlElement;
-const toggleDisplayModeClass = (displayMode: boolean): void => {
-    if (!displayMode) {
-        htmlDocument.classList.add('dark');
-    } else {
-        htmlDocument.classList.remove('dark');
-    }
-    localStorage.setItem('isDarkMode', displayMode.toString());
-};
+
 export const DisplayModeProvider = ({ children }: DisplayModeProviderProps) => {
-    const [isDarkMode, setIsDarkMode] = useState(true);
+    const [isDarkMode, setIsDarkMode] = useState(false);
+    const { theme, setTheme } = useTheme();
 
     useEffect(() => {
         if (typeof window === 'object') {
             // eslint-disable-next-line prefer-destructuring
             htmlDocument = document.getElementsByTagName('html')[0];
-            console.log(htmlDocument);
         }
     }, []);
+
+    const toggleDisplayModeClass = useCallback(
+        (displayMode: boolean): void => {
+            if (!displayMode) {
+                htmlDocument.classList.remove('dark');
+                setTheme('light');
+            } else {
+                htmlDocument.classList.add('dark');
+                setTheme('dark');
+            }
+            localStorage.setItem('isDarkMode', displayMode.toString());
+        },
+        [isDarkMode, theme]
+    );
 
     useEffect(() => {
         if (htmlDocument) {
@@ -54,7 +62,7 @@ export const DisplayModeProvider = ({ children }: DisplayModeProviderProps) => {
             toggleDisplayModeClass(!prevDisplayMode);
             return !prevDisplayMode;
         });
-    }, [isDarkMode]);
+    }, [isDarkMode, theme]);
 
     return (
         // eslint-disable-next-line react/jsx-no-constructed-context-values

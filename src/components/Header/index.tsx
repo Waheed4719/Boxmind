@@ -5,29 +5,31 @@ import clsx from 'clsx';
 import BrandLogo from '../../../public/icons/cube.svg';
 import CustomSwitch from '../Common/CustomSwitch';
 import SearchBar from './SearchBar';
-import Image from 'next/image';
 import { DisplayModeContext } from '@/contexts/DisplayModeContext';
 import Link from 'next/link';
 import Avatar from '../Common/Avatar';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
+import MoonIcon from '../../../public/icons/MoonIcon';
+import SunIcon from '../../../public/icons/SunIcon';
 
 const Header = () => {
     const { isDarkMode, toggleDarkMode } = useContext(DisplayModeContext);
+
     const modes = [
         {
             displayText: 'Day',
-            element: <Image src='./icons/sun.svg' alt='sun' height={14} width={14} />
+            element: <SunIcon />
         },
         {
             displayText: 'Night',
-            element: <Image src='./icons/moon.svg' alt='moon' height={14} width={14} />
+            element: <MoonIcon />
         }
     ];
     const activeDisplayMode = isDarkMode ? 'Night' : 'Day';
     return (
         <div
             className={clsx([
-                `h-[60px] flex justify-between items-center px-4 fixed top-0 bg-white w-full z-10`
+                `h-[60px] flex justify-between items-center px-4 fixed top-0 bg-white dark:bg-[#18181e] w-full z-10`
             ])}
         >
             <div className={clsx([`w-fit flex items-center gap-x-2`])}>
@@ -49,6 +51,8 @@ const Header = () => {
                     modes={modes}
                     activeMode={activeDisplayMode}
                     setActiveMode={toggleDarkMode}
+                    switchClass={(isDarkMode && 'dark:bg-[#2f303a]') as string}
+                    activeClass={(isDarkMode && 'dark:bg-[#3d3c3f]') as string}
                 />
                 <div className='w-[2px] h-[25px] bg-[#f4f5f4] mx-3' />
                 <Avatar image='/icons/person1.png' height={35} width={35} />

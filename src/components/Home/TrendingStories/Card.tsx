@@ -2,6 +2,8 @@ import styles from './trending_stories.module.css';
 import clsx from 'clsx';
 import Avatar from '@/components/Common/Avatar';
 import { Post } from '@/types';
+import { useContext } from 'react';
+import { DisplayModeContext } from '@/contexts/DisplayModeContext';
 
 type CardProps = {
     post: Post;
@@ -10,10 +12,16 @@ type CardProps = {
 const array = [0, 3, 4];
 
 const Card = ({ post, index }: CardProps) => {
+    const { isDarkMode } = useContext(DisplayModeContext);
     return (
         <div
             className={clsx([
-                !array.includes(index) ? styles.gradient : 'bg-[#5e80d8]',
+                // eslint-disable-next-line no-nested-ternary
+                !array.includes(index)
+                    ? isDarkMode
+                        ? styles.darkGradient
+                        : styles.gradient
+                    : 'bg-[#5e80d8] dark:bg-[#3a4c5a]',
                 styles.trendingStoriesCard,
                 'p-8 flex flex-col justify-start gap-2 sh'
             ])}

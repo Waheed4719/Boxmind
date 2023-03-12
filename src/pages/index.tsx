@@ -11,7 +11,7 @@ import { ReactNode } from 'react';
 const Home = () => {
     const isAuthenticated = true;
     return (
-        <div className={`${styles.home} ${isAuthenticated && 'pl-[70px]'} `}>
+        <div className={`${styles.home} ${isAuthenticated && 'pl-[70px]'} bg-white dark:bg-[#000]`}>
             <TrendingStories />
             <div className='flex flex-col gap-4'>
                 <FavouriteAuthors />

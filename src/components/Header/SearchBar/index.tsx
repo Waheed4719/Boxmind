@@ -4,10 +4,10 @@ import Button from '../../Common/CustomButton';
 const SearchBar = () => {
     return (
         <div className='flex items-center gap-x-2'>
-            <div className='rounded-full w-[400px] border p-4 border-[#ddd] h-[40px] flex gap-x-2 items-center bg-[#f5f7f9]'>
+            <div className='rounded-full w-[400px] border p-4 border-[#ddd] h-[40px] flex gap-x-2 items-center bg-[#f5f7f9] dark:bg-[#2f303a] dark:border-[#3d3c3f]'>
                 <SearchIcon height={20} width={20} style={{ color: '#a0a5b7' }} />
                 <input
-                    className='bg-transparent outline-none border-none'
+                    className='bg-transparent outline-none border-none '
                     type='text'
                     placeholder='Search'
                 />
