@@ -20,9 +20,9 @@ const FavouritesAndPopular = () => {
         }
     ];
     return (
-        <div className='flex flex-col h-[100%] px-6 gap-4'>
+        <div className='flex flex-col h-[100%] px-6 gap-4 pt-3'>
             <CustomSwitch modes={modes} activeMode={activeMode} setActiveMode={setActiveMode} />
-            <div className='grid sm:grid-cols-2 md:grid-cols-2 2xl:grid-cols-3 gap-6 flex-1'>
+            <div className='grid  md:grid-cols-2 2xl:grid-cols-3 gap-6 flex-1'>
                 {trendingStories.slice(0, width && width > 1540 ? 3 : 2).map((post) => (
                     <Card key={post.title} post={post} />
                 ))}

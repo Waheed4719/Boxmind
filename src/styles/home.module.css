@@ -6,3 +6,14 @@
         'trending-stories favorites-and-popular favorites-and-popular'
         'random-posts random-posts random-posts'; */
 }
+
+@media only screen and (max-width: 1280px) {
+    .home {
+        height: fit-content;
+        grid-template-columns: 100%;
+        grid-template-areas:
+            'trending-stories'
+            'favorites-and-popular'
+            'random-posts';
+    }
+}
