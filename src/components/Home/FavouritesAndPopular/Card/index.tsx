@@ -13,8 +13,6 @@ const Card = ({ post }: CardProps) => {
             <div className='min-h-[240px] relative'>
                 <Image
                     src={post.featuredImage}
-                    // width={800}
-                    // height={240}
                     fill
                     style={{ objectFit: 'cover', maxHeight: 280 }}
                     className='mb-2'
@@ -24,7 +22,7 @@ const Card = ({ post }: CardProps) => {
 
             <h3 className='font-semibold text-[#b2b9ca] text-sm uppercase'>{post.category}</h3>
             <h3 className='font-bold text-[#657297]'>{post.title}</h3>
-            <p className='text-[#c3c8d6] text-sm'>
+            <p className='text-gray-400  text-sm'>
                 Ad qui veniam eiusmod esse id eu ad aute do amet ut. Aliquip sit ullamco amet
                 eiusmod consectetur velit deserunt voluptate pariatur incididunt id.{' '}
             </p>

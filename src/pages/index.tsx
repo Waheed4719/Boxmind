@@ -9,7 +9,7 @@ import Layout from '@/components/Layout';
 import { ReactNode } from 'react';
 
 const Home = () => {
-    const isAuthenticated = true;
+    const isAuthenticated = false;
     return (
         <div className={`${styles.home} ${isAuthenticated && 'pl-[70px]'} bg-white dark:bg-[#000]`}>
             <TrendingStories />
