@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <div className={`${styles.home} ${isAuthenticated && 'pl-[70px]'} bg-white dark:bg-[#000]`}>
             <TrendingStories />
-            <div className='flex flex-col gap-4'>
+            <div className='flex flex-col gap-1'>
                 <FavouriteAuthors />
                 <FavouritesAndPopular />
             </div>

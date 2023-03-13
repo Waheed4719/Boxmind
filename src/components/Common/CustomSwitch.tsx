@@ -12,7 +12,7 @@ type CustomSwitchProps = {
     inActiveClass?: string;
 };
 
-const activeSwitchClassNames = 'bg-white text-[#909ab4] ';
+const activeSwitchClassNames = 'bg-white text-[#909ab4]   dark:text-white';
 const inActiveSwitchClassNames = 'text-[#c0c6d4]';
 const commonSwitchClassNames =
     'font-semibold px-3 flex items-center cursor-pointer ease-in-out duration-300 rounded-full';
@@ -47,7 +47,7 @@ const CustomSwitch = ({
                     onClick={() => setActiveMode(mode.displayText)}
                     className={`${generateClassName(
                         mode
-                    )} ${commonSwitchClassNames} hover:bg-white hover:dark:bg-[#3d3c3f]`}
+                    )} ${commonSwitchClassNames} hover:bg-white hover:dark:bg-[#ffffff33]`}
                 >
                     {mode.element}
                 </button>

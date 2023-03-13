@@ -28,7 +28,7 @@ const FavouritesAndPopular = () => {
                 setActiveMode={setActiveMode}
                 switchClass='dark:bg-[#18181e]'
                 inActiveClass='dark:bg-[#18181e]'
-                activeClass='dark:bg-[#3d3c3f]'
+                activeClass='dark:bg-[#ffffff33]'
             />
             <div className='grid md:grid-cols-2 2xl:grid-cols-3 gap-6 flex-1'>
                 {trendingStories.slice(0, width && width > 1540 ? 3 : 2).map((post) => (

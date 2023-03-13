@@ -52,7 +52,7 @@ const Header = () => {
                     activeMode={activeDisplayMode}
                     setActiveMode={toggleDarkMode}
                     switchClass={(isDarkMode && 'dark:bg-[#2f303a]') as string}
-                    activeClass={(isDarkMode && 'dark:bg-[#3d3c3f]') as string}
+                    activeClass={(isDarkMode && 'dark:bg-[#ffffff33]') as string}
                 />
                 <div className='w-[2px] h-[25px] bg-[#f4f5f4] mx-3' />
                 <Avatar image='/icons/person1.png' height={35} width={35} />
