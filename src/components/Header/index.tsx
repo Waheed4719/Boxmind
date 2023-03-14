@@ -11,10 +11,11 @@ import Avatar from '../Common/Avatar';
 import { ChevronDownIcon } from '@heroicons/react/24/solid';
 import MoonIcon from '../../../public/icons/MoonIcon';
 import SunIcon from '../../../public/icons/SunIcon';
+import { useWindowSize } from '@/hooks/useWindowSize';
 
 const Header = () => {
     const { isDarkMode, toggleDarkMode } = useContext(DisplayModeContext);
-
+    const { width } = useWindowSize();
     const modes = [
         {
             displayText: 'Day',
@@ -45,16 +46,21 @@ const Header = () => {
                 </Link>
             </div>
             <div className='h-fit flex items-center gap-2'>
-                <SearchBar />
-                <div className='w-[2px] h-[25px] bg-[#f4f5f4] mx-3' />
-                <CustomSwitch
-                    modes={modes}
-                    activeMode={activeDisplayMode}
-                    setActiveMode={toggleDarkMode}
-                    switchClass={(isDarkMode && 'dark:bg-[#2f303a]') as string}
-                    activeClass={(isDarkMode && 'dark:bg-[#ffffff33]') as string}
-                />
-                <div className='w-[2px] h-[25px] bg-[#f4f5f4] mx-3' />
+                {width && width > 756 && (
+                    <>
+                        <SearchBar />
+                        <div className='w-[2px] h-[25px] bg-[#f4f5f4] mx-3' />
+                        <CustomSwitch
+                            modes={modes}
+                            activeMode={activeDisplayMode}
+                            setActiveMode={toggleDarkMode}
+                            switchClass={(isDarkMode && 'dark:bg-[#2f303a]') as string}
+                            activeClass={(isDarkMode && 'dark:bg-[#ffffff33]') as string}
+                        />
+                        <div className='w-[2px] h-[25px] bg-[#f4f5f4] mx-3' />
+                    </>
+                )}
+
                 <Avatar image='/icons/person1.png' height={35} width={35} />
                 <ChevronDownIcon className='h-4 w-4 text-gray-500' />
             </div>
